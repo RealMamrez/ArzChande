@@ -83,13 +83,22 @@ p.date {
 }
 
 .line{
-  width: 100%;
+  width: 500px%;
   height: 38px;
-  background: #3A6FF8;
-  z-index: 1000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 8px 0px 0px 24px;
+  /* background: #3a70f810; */
+  border-bottom: 2px solid #3A6FF8;
+  /* z-index: 1000; */
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  /* border-radius: 8px 0px 0px 24px; */
+  /* transition: all 1s ease; */
 }
+
+/* .line:hover{
+  background: #3a70f8;
+  border: none;
+  transition: all 1s ease;
+} */
+
 
 .title{
   font-family: 'Vazir';
@@ -128,16 +137,91 @@ p.date {
 }
 
 .box{
-  width: 350px;
-  height: 220px;
-  background-color: #1B2028;
+  width: 300px;
+  height: 200px;
+  background-color: #1b202851;
   border-radius: 15px;
   margin-bottom: 42px;
   margin: 0;
+  filter: drop-shadow(5px 5px 10px #0000005b);
+}
+
+.box .blur{
+  filter: blur(5px);
+  transition: all .5s ease;
+}
+
+.box.ton{
+  border: 2px solid red;
+}
+
+.box .blur:hover{
+  filter: blur(15px);
+  transition: all 1.2s ease;
+}
+
+.box.none{
+  border: 2px solid #3A6FF8;
+}
+
+.soon{
+  position: absolute;
+  bottom: 60px;
+}
+
+.soon p{
+  font-family: vazir;
+  font-weight: 1000;
+  font-size: 24px;
+  text-align: center;
+  padding: 10px 0;
+  width: 300px;
+  color: #ffffff;
+}
+
+/* .error p:hover ~ .box .blur{
+  filter: blur(10px);
+  transition: all 1.2s ease;
+}
+
+.error p:hover{
+  transform: scale(1.2) translateY(10px);
+  transition: all .5s ease;
+}
+
+.error p{
+  position: absolute;
+  color: rgb(255, 0, 0);
+  font-size: 24px;
+  font-family: vazir;
+  font-weight: 1000;
+  text-align: center;
+  z-index: 100;
+  left: 25%;
+  top: 30%;
+  filter: drop-shadow(5px 5px 10px #ff00005b);
+  transition: all .5s ease;
+} */
+
+.popup{
+  position: absolute;
+  bottom: 10px;
+}
+
+.popup p{
+  font-family: vazir;
+  font-weight: 1000;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px 0;
+  width: 300px;
+  color: #ffffff;
 }
 
 .head-box{
   display: flex;
+  width: auto;
+  box-sizing: border-box;
 }
 
 .icon{
@@ -175,10 +259,17 @@ p.mokhtasar-arz{
 }
 
 .up{
+  position: absolute;
   color: #1ECB4F;
   font-size: 24px;
   margin-top: 40px;
-  margin-left: 100px;
+  margin-left: 250px;
+  transition: all 1s ease;
+}
+
+.up:hover{
+  transform: scale(1.2) translateY(-5px);
+  transition: all 1s ease;
 }
 
 .price{
@@ -205,11 +296,25 @@ p.price-arz{
   letter-spacing: 0.02em;
 }
 
-.box-up{
-  width: 170px;
-  margin-top: 5px;
-  margin-left: 28px;
+sup{
+  font-size: 12px;
+  font-family: vazir;
+  font-weight: 500;
 }
+
+.box-up{
+  position: absolute;
+  width: 120px;
+  height: 55px;
+  margin-top: 0px;
+  margin-left: 160px;
+  transition: all .5s ease;
+}
+
+/* .box-up.open{
+  width: 120px;
+  transition: all .5s ease;
+} */
 
 .show-more-less{
   display: flex;
