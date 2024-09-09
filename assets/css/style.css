@@ -1,0 +1,356 @@
+
+/* ADD FONTS */
+@font-face {
+    font-family: vazir;
+    src: url(../fonts/Vazir.ttf);
+}
+@font-face {
+  font-family: vazir;
+  src: url(../fonts/Vazir-Black.ttf);
+  font-weight: bolder;
+}
+@font-face {
+  font-family: vazir;
+  src: url(../fonts/Vazir-Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: vazir;
+  src: url(../fonts/Vazir-Light.ttf);
+  font-weight: light;
+}
+@font-face {
+  font-family: vazir;
+  src: url(../fonts/Vazir-Medium.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: vazir;
+  src: url(../fonts/Vazir-Thin.ttf);
+  font-weight: thin;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* STYLE FOR WINDOW */
+p{
+  margin: 0;
+}
+body{
+  font: 'Poppins', 'vazir';
+  padding: 0 50px;
+  padding-top: 20px;
+  background-color: #30353F;
+}
+
+/* HEADER */
+.header-arzchande{
+  display: flex;
+}
+
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo img{
+  height: 87px;
+  width: 244px;
+}
+
+.date{
+  position: absolute;
+  top: 80px;
+}
+
+p.date {
+  color: #FFF;
+  font-size: 24;
+  font-family: 'vazir';
+  font-weight: bold;
+}
+
+.arz{
+  margin-top: 29px;
+}
+
+.header-section-arz{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center ;
+}
+
+.line{
+  width: 100%;
+  height: 38px;
+  background: #3A6FF8;
+  z-index: 1000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px 0px 0px 24px;
+}
+
+.title{
+  font-family: 'Vazir';
+  max-width: 500px;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 66px;
+  color: #FFF;
+  margin: 0 0 0 38px;
+  display: inline;
+
+}
+
+.under-title-arz{
+  position: absolute;
+  width: 42px;
+  height: 12px;
+  background: #3A6FF8;
+  right: 50px;
+  top: 186px;
+  z-index: -1;
+}
+
+.boxs{
+  margin-top: 56px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.boxs2{
+  margin-top: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.box{
+  width: 350px;
+  height: 220px;
+  background-color: #1B2028;
+  border-radius: 15px;
+  margin-bottom: 42px;
+  margin: 0;
+}
+
+.head-box{
+  display: flex;
+}
+
+.icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 70px;
+  background: #31353F;
+  border-radius: 10px;
+  margin: 24px 19px 0 20px;
+}
+
+.icon img{
+  width: 50px;
+  height: 50px;
+}
+
+p.name-arz{
+  font-family: 'vazir';
+  font-weight: 600;
+  font-size: 24px;
+  color: #FFF;
+  margin: 25px 0 0 0;
+}
+
+p.mokhtasar-arz{
+  font-family: 'vazir';
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFF;
+  margin: 3px 0 0 0;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.up{
+  color: #1ECB4F;
+  font-size: 24px;
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+.price{
+  display: flex;
+  align-items: center;
+}
+
+p.price-arz{
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 25px;
+  font-family: vazir;
+  font-weight: 600;
+  color: #FFF;
+}
+
+.change-arz{
+  margin-top: 8px;
+  margin-left: 20px;
+  font-size: 16px;
+  font-family: vazir;
+  font-weight: 600;
+  color: #1ECB4F;
+  letter-spacing: 0.02em;
+}
+
+.box-up{
+  width: 170px;
+  margin-top: 5px;
+  margin-left: 28px;
+}
+
+.show-more-less{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+p.show-more{
+  font-size: 20px;
+  color: #FFF;
+  font-family: vazir;
+  font-weight: normal;
+  opacity: 0.8;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.show-more-icon{
+  color: #FFF;
+  width: 24px;
+  margin-top: 0;
+  justify-content: center;
+  text-align: center;
+  opacity: 0.8;
+  transition: all 0.5s ease;
+}
+
+p.show-more:hover ~ .show-more-icon{
+  margin-top: 6px;
+  opacity: 1;
+  transition: all 0.5s ease;
+  filter: blur(2px);
+}
+
+p.show-more:hover{
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+  filter: blur(2px);
+}
+
+.update-show-more{
+  display: none;
+  font-size: 24px;
+  position: absolute;
+  color: #FFF;
+  font-family: vazir;
+  font-weight: bold;
+  text-align: center;
+  filter: drop-shadow(5px 4px 5px #000000);
+  transition: all 0.7s ease;
+}
+
+p.show-more:hover ~ .update-show-more{
+  display: block;
+  z-index: -1;
+}
+
+.line2{
+  margin-top: 10px;
+}
+
+.title2{
+  margin-top: 10px;
+}
+
+.under-title-crypto{
+  position: absolute;
+  width: 213px;
+  height: 12px;
+  background: #3A6FF8;
+  right: 58px;
+  top: 868px;
+  z-index: -1;
+}
+
+.under-title-arz-chande{
+  position: absolute;
+  width: 120px;
+  height: 12px;
+  background: #3A6FF8;
+  right: 58px;
+  top: 1546px;
+  z-index: -1;
+}
+
+.main-arz-chande{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 92px;
+  align-items: center;
+}
+
+.arz-chande-image img{
+  width: 880px;
+  height: 572px;
+  border-radius: 36px;
+}
+
+p.about-us {
+  width: 414px;
+  height: 570px;
+  color: #FFF;
+  font-size: 24px;
+  font-family: vazir;
+  direction: rtl;
+}
+
+.ads{
+  margin-top: 100px;
+}
+
+.ads img{
+  width: 100%;
+  height: 261px;
+  border-radius: 36px;
+  text-align: center;
+}
+
+.social{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.social img {
+  margin-top: 80px;
+  width: 350px;
+  height: 81px;
+  margin-bottom: 70px;
+}
+
+footer img{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: ;
+}
+
+.auther {
+  color: #3A6FF8;
+  font-weight: 700;
+}
