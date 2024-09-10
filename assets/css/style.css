@@ -82,7 +82,7 @@ p.date {
   align-items: center ;
 }
 
-.line{
+/* .line{ */
   /* width: 500px; */
   /* height: 38px; */
   /* background: #3a70f810; */
@@ -91,7 +91,7 @@ p.date {
   /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   /* border-radius: 8px 0px 0px 24px; */
   /* transition: all 1s ease; */
-}
+/* } */
 
 /* .line:hover{
   background: #3a70f8;
@@ -120,6 +120,24 @@ p.date {
   right: 50px;
   top: 186px;
   z-index: -1;
+}
+
+.grid-container{
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 22.8% 22.8% 22.8% 22.8%;
+  gap: 42px;
+}
+
+.grid-item{
+  background: #3A6FF8;
+  height: 200px;
+  width: 100%;
+  background-color: #1b202851;
+  border-radius: 15px;
+  margin-bottom: 42px;
+  margin: 0;
+  filter: drop-shadow(5px 5px 10px #0000005b);
 }
 
 .boxs{
@@ -439,7 +457,7 @@ p.about-us {
   direction: rtl;
 }
 
-.ads{
+/* .ads{
   margin-top: 100px;
 }
 
@@ -448,7 +466,7 @@ p.about-us {
   height: 261px;
   border-radius: 36px;
   text-align: center;
-}
+} */
 
 .social{
   display: flex;
@@ -461,16 +479,83 @@ p.about-us {
   width: 350px;
   height: 81px;
   margin-bottom: 70px;
+  transition: all .5s ease;
 }
 
-footer img{
+.social img:hover{
+  transform: scale(1.2);
+  transition: all .5s ease;
+}
+
+#A:hover + #B{
+  filter: blur(2px);
+  transform: scale(0.95);
+  transition: all .5s ease;
+}
+
+#A{
+  transition: all .5s ease;
+}
+
+#B{
+  transition: all .5s ease;
+}
+
+#C{
+  transition: all .5s ease;
+}
+
+#A.hover{
+  filter: blur(2px);
+  transform: scale(0.95);
+  transition: all .5s ease;
+}
+
+#B.hover{
+  filter: blur(2px);
+  transform: scale(0.95);
+  transition: all .5s ease;
+}
+
+#C.hover{
+  filter: blur(2px);
+  transform: scale(0.95);
+  transition: all .5s ease;
+}
+
+/* footer img{
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: ;
-}
+} */
 
 .auther {
   color: #3A6FF8;
   font-weight: 700;
 }
+
+/* @media screen and (max-width : 1300px) {
+  .boxs{
+    margin-top: 56px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .boxs2{
+    margin-top: 42px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .box{
+    width: 250px;
+    height: 200px;
+    background-color: #1b202851;
+    border-radius: 15px;
+    margin-bottom: 42px;
+    margin: 0;
+    filter: drop-shadow(5px 5px 10px #0000005b);
+  }
+} */

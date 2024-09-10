@@ -1,5 +1,9 @@
+const A = document.querySelector('#A')
+const B = document.querySelector('#B')
+const C = document.querySelector('#C')
 const box = document.querySelector('.box')
 const upBox = document.querySelector('.box-up')
+const upIcon = document.querySelector('i')
 const usdPriceOutput = document.querySelector('#usd-price')
 // const box2 = document.querySelector('')
 // const box3 = document.querySelector('')
@@ -43,12 +47,33 @@ let today = new Date().toLocaleDateString('fa-IR');
 console.log(today);
 
 
-// function toggleClass() {
-//   upBox.classList.toggle("open");
-// }
-
-// box.addEventListener("mouseover", toggleClass);
-// box.addEventListener("mouseleave", toggleClass);
+C.addEventListener("mouseover", event => {
+    A.classList.add('hover')
+    B.classList.add('hover')
+  });
+  
+  C.addEventListener("mouseout", event => {
+    A.classList.remove('hover')
+    B.classList.remove('hover')
+  });
+B.addEventListener("mouseover", event => {
+    A.classList.add('hover')
+    C.classList.add('hover')
+  });
+  
+  B.addEventListener("mouseout", event => {
+    A.classList.remove('hover')
+    C.classList.remove('hover')
+  });
+A.addEventListener("mouseover", event => {
+    C.classList.add('hover')
+    B.classList.add('hover')
+  });
+  
+  A.addEventListener("mouseout", event => {
+    C.classList.remove('hover')
+    B.classList.remove('hover')
+  });
 
 
 // function start(){
@@ -247,7 +272,7 @@ console.log(today);
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = (data.last - data.open)/data.open*100;
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -255,9 +280,12 @@ console.log(today);
             dogeUpper.classList.add('fa-caret-down');
             dogeUpper.classList.add('down');
             dogeTodayOutput.classList.add('down');
-        }
 
-        dogeTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+            dogeTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            dogeTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
     })
 
     //SOL
@@ -286,9 +314,12 @@ console.log(today);
             solUpper.classList.add('fa-caret-down');
             solUpper.classList.add('down');
             solTodayOutput.classList.add('down');
-        }
 
-        solTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+            solTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            solTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
     })
 
     //ton
