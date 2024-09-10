@@ -52,21 +52,21 @@ console.log(today);
 
 
 // function start(){
-    fetch(APIUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const priceUSD = data.usd_sell.value;
-            console.log(priceUSD);
-            usdPriceOutput.innerHTML = `\$${priceUSD} <sup>تومان</sup>`
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+    // fetch(APIUrl)
+    //     .then(response => {
+    //         if (!response.ok) {
+    //             throw new Error('Network response was not ok');
+    //         }
+    //         return response.json();
+    //     })
+    //     .then(data => {
+    //         const priceUSD = data.usd_sell.value;
+    //         console.log(priceUSD);
+    //         usdPriceOutput.innerHTML = `\$${priceUSD} <sup>تومان</sup>`
+    //     })
+    //     .catch(error => {
+    //         console.error('Error:', error);
+    //     });
 
 
     //USD
@@ -167,8 +167,8 @@ console.log(today);
     .then(response => {
         return response.json();
     })
-    .then(data2 => {
-        let x = data2.RAW.BNB.USD.CHANGEPCTDAY
+    .then(data => {
+        let x = data.RAW.BNB.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -176,9 +176,13 @@ console.log(today);
             bnbUpper.classList.add('fa-caret-down');
             bnbUpper.classList.add('down');
             bnbTodayOutput.classList.add('down');
+
+            bnbTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            bnbTodayOutput.innerHTML = `+${(y.toFixed(2))}%`
         }
 
-        bnbTodayOutput.innerHTML = `${(y.toFixed(2))}%`
     })
 
     //USDT
@@ -217,9 +221,12 @@ console.log(today);
             trxUpper.classList.add('fa-caret-down');
             trxUpper.classList.add('down');
             trxTodayOutput.classList.add('down');
-        }
 
-        bnbTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+            trxTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            trxTodayOutput.innerHTML = `+${(y.toFixed(2))}%`
+        }
     })
 
     //DOGE
