@@ -55,8 +55,8 @@ body{
 }
 
 .logo img{
-  height: 87px;
   width: 244px;
+  filter: drop-shadow(5px 5px 10px #ffffff15);
 }
 
 .date{
@@ -65,7 +65,7 @@ body{
 }
 
 p.date {
-  color: #FFF;
+  color: #f6efd1;
   font-size: 24;
   font-family: 'vazir';
   font-weight: bold;
@@ -83,10 +83,10 @@ p.date {
 }
 
 .line{
-  width: 500px%;
-  height: 38px;
+  /* width: 500px; */
+  /* height: 38px; */
   /* background: #3a70f810; */
-  border-bottom: 2px solid #3A6FF8;
+  /* border-bottom: 2px solid #3A6FF8; */
   /* z-index: 1000; */
   /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   /* border-radius: 8px 0px 0px 24px; */
@@ -106,7 +106,7 @@ p.date {
   font-weight: 700;
   font-size: 42px;
   line-height: 66px;
-  color: #FFF;
+  color: #f6efd1;
   margin: 0 0 0 38px;
   display: inline;
 
@@ -166,7 +166,7 @@ p.date {
 
 .soon{
   position: absolute;
-  bottom: 60px;
+  bottom: 70px;
 }
 
 .soon p{
@@ -267,6 +267,16 @@ p.mokhtasar-arz{
   transition: all 1s ease;
 }
 
+.up.down{
+  color: red;
+  transition: all 1s ease;
+}
+
+.up.down:hover{
+  transform: scale(1.2) translateY(5px);
+  transition: all 1s ease;
+}
+
 .up:hover{
   transform: scale(1.2) translateY(-5px);
   transition: all 1s ease;
@@ -294,6 +304,10 @@ p.price-arz{
   font-weight: 600;
   color: #1ECB4F;
   letter-spacing: 0.02em;
+}
+
+.change-arz.down{
+  color: red;
 }
 
 sup{
@@ -413,6 +427,7 @@ p.show-more:hover ~ .update-show-more{
   width: 880px;
   height: 572px;
   border-radius: 36px;
+  filter: drop-shadow(5px 5px 10px #3a70f826);
 }
 
 p.about-us {
