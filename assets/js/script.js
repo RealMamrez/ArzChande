@@ -6,6 +6,8 @@ const item = document.querySelector('.grid-item')
 const upBox = document.querySelector('.box-up')
 const upIcon = document.querySelector('i')
 const usdPriceOutput = document.querySelector('#usd-price')
+const showMore1 = document.querySelector('#show-more1')
+const showMore2 = document.querySelector('#show-more2')
 // const box2 = document.querySelector('')
 // const box3 = document.querySelector('')
 // const box4 = document.querySelector('')
@@ -74,6 +76,21 @@ A.addEventListener("mouseover", event => {
   A.addEventListener("mouseout", event => {
     C.classList.remove('hover')
     B.classList.remove('hover')
+  });
+
+showMore1.addEventListener("mouseover", event => {
+    showMore1.innerHTML = '... درحال توسعه'
+  });
+  
+  showMore1.addEventListener("mouseout", event => {
+    showMore1.innerHTML = 'نمایش بیشتر'
+  });
+showMore2.addEventListener("mouseover", event => {
+    showMore2.innerHTML = '... درحال توسعه'
+  });
+  
+  showMore2.addEventListener("mouseout", event => {
+    showMore2.innerHTML = 'نمایش بیشتر'
   });
 
 
@@ -294,15 +311,4 @@ A.addEventListener("mouseover", event => {
         let price = ton.data.rates.USD
         price = Math.floor(price * 100) / 100;
         tonPriceOutput.innerHTML = `\$${(price.toFixed(2))} <sup>دلار</sup>`
-    })
-
-
-
-    fetch(`https://gw.arzdigital.com/muninn/v1/chart?id=20128&range=7d&_=1726005082372`)
-    .then(response => {
-        return response.json();
-    })
-    .then(usd => {
-        let e = usd.meta.high_usd
-        console.log(e)
     })
