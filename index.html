@@ -11,7 +11,7 @@
 <body>
 
     <header class="header-arzchande">
-        <p class="date">چهارشنبه ، بیست سوم شهریور ماه</p>
+        <!-- <p class="date">چهارشنبه ، بیست سوم شهریور ماه</p> -->
         <a href="#about" class="logo"><img src="./assets/image/LogoV1.png" alt="ArzChande-Logo"></a>
     </header>
 
@@ -19,583 +19,429 @@
         <div class="header-section-arz">
             <div class="line"></div>
             <p class="title">اَرز</p>
-            <!-- <div class="under-title-arz"></div> -->
         </div>
+        <div class="hidden"></div>
+        <div class="hidden2"></div>
+        <tgju
+            type="ticker-tap"
+            items="137205,137206,137207,137225,137203,137214,137212,137231"
+            columns="dot"
+            speed="35"
+            token="webservice"
+            styles='{
+                "background": "#30353F",
+                "hover": "#2f4475",
+                "border": "#30353F",
+                "separator": "#0037cf",
+                "title": "#ffffff",
+                "dot": "#3a6ff8",
+                "price": "#ffffff",
+                "copyright": "#30353F",
+                "copyright_fix": "#30353F",
+                "copyright_fix_text": "#30353F",
+                "low": "#e30d0d",
+                "high": "#11d44e",
+                "border-radius": "24px"
+            }'>
+        </tgju>
+    <script src="https://api.tgju.org/v1/widget/v2" defer></script>
 
-        <div class="boxs">
-            <div class="box" id="usd">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/USD.png" alt="USD">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">US Dollar</p>
-                        <p class="mokhtasar-arz">USD</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="usd-price">$60,000 <sup>تومان</sup></p>
-                        <p class="change-arz">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-            <div class="box">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/euro.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Euro</p>
-                        <p class="mokhtasar-arz">eur</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="euro-price">$60,000 <sup>تومان</sup></p>
-                        <p class="change-arz">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-            <div class="box">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/GBP.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Pound</p>
-                        <p class="mokhtasar-arz">GBP</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz">$60,000 <sup>تومان</sup></p>
-                        <p class="change-arz">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-            <div class="box">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/KWD.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Dinar</p>
-                        <p class="mokhtasar-arz">KWD</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz">$60,000 <sup>تومان</sup></p>
-                        <p class="change-arz">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-        </div>
 
-        <div class="boxs2">
-            <div class="box none">
-                <div class="blur">
+
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="box error" id="usd">
+                    <div class="blur">
+                        <div class="head-box">
+                            <div class="icon">
+                                <img src="./assets/image/Arz/USD.png" alt="USD">
+                            </div>
+                            <div class="moshakhasat-arz">
+                                <p class="name-arz">US Dollar</p>
+                                <p class="mokhtasar-arz">USD</p>
+                            </div>
+                            <i class="fa-solid fa-caret-up up"></i>
+                        </div>
+                        <div class="price">
+                            <div class="gheymat">
+                                <p class="price-arz" id="usd-price">$60,000 <sup>تومان</sup></p>
+                                <p class="change-arz">+0.25%</p>
+                            </div>
+                            <img src="./assets/image/up.png" alt="UP" class="box-up">
+                        </div>
+                </div>
+                <div class="popup">
+                    <p>! اختلال در ارتباط با سرویس</p>
+                </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="box error">
+                    <div class="blur">
+                        <div class="head-box">
+                            <div class="icon">
+                                <img src="./assets/image/Arz/euro.png" alt="">
+                            </div>
+                            <div class="moshakhasat-arz">
+                                <p class="name-arz">Euro</p>
+                                <p class="mokhtasar-arz">eur</p>
+                            </div>
+                            <i class="fa-solid fa-caret-up up"></i>
+                        </div>
+                        <div class="price">
+                            <div class="gheymat">
+                                <p class="price-arz" id="euro-price">$60,000 <sup>تومان</sup></p>
+                                <p class="change-arz">+0.25%</p>
+                            </div>
+                            <img src="./assets/image/up.png" alt="UP" class="box-up">
+                        </div>
+                    </div>
+                    <div class="popup">
+                        <p>! اختلال در ارتباط با سرویس</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="box">
                     <div class="head-box">
                         <div class="icon">
-                            <img src="./assets/image/Arz/USD.png" alt="">
+                            <img src="./assets/image/Arz/GBP.png" alt="">
                         </div>
                         <div class="moshakhasat-arz">
-                            <p class="name-arz">None</p>
-                            <p class="mokhtasar-arz">none</p>
+                            <p class="name-arz">Pound</p>
+                            <p class="mokhtasar-arz">GBP</p>
                         </div>
                         <i class="fa-solid fa-caret-up up"></i>
                     </div>
                     <div class="price">
                         <div class="gheymat">
-                            <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
+                            <p class="price-arz">$60,000 <sup>تومان</sup></p>
                             <p class="change-arz">+0.25%</p>
                         </div>
                         <img src="./assets/image/up.png" alt="UP" class="box-up">
                     </div>
                 </div>
-                <div class="soon">
-                    <p>... بزودی</p>
-                </div>
             </div>
-            <div class="box none">
-                <div class="blur">
+            <div class="grid-item">
+                <div class="box">
                     <div class="head-box">
                         <div class="icon">
-                            <img src="./assets/image/Arz/USD.png" alt="">
+                            <img src="./assets/image/Arz/AED.png" alt="">
                         </div>
                         <div class="moshakhasat-arz">
-                            <p class="name-arz">None</p>
-                            <p class="mokhtasar-arz">none</p>
+                            <p class="name-arz">Emarat</p>
+                            <p class="mokhtasar-arz">AED</p>
                         </div>
                         <i class="fa-solid fa-caret-up up"></i>
                     </div>
                     <div class="price">
                         <div class="gheymat">
-                            <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
+                            <p class="price-arz">$60,000 <sup>تومان</sup></p>
                             <p class="change-arz">+0.25%</p>
                         </div>
                         <img src="./assets/image/up.png" alt="UP" class="box-up">
                     </div>
                 </div>
-                <div class="soon">
-                    <p>... بزودی</p>
+            </div>
+            <div class="grid-item">
+                <div class="box none">
+                    <div class="blur">
+                        <div class="head-box">
+                            <div class="icon">
+                                <img src="./assets/image/Arz/USD.png" alt="">
+                            </div>
+                            <div class="moshakhasat-arz">
+                                <p class="name-arz">None</p>
+                                <p class="mokhtasar-arz">none</p>
+                            </div>
+                            <i class="fa-solid fa-caret-up up"></i>
+                        </div>
+                        <div class="price">
+                            <div class="gheymat">
+                                <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
+                                <p class="change-arz">+0.25%</p>
+                            </div>
+                            <img src="./assets/image/up.png" alt="UP" class="box-up">
+                        </div>
+                    </div>
+                    <div class="soon">
+                        <p>... بزودی</p>
+                    </div>
                 </div>
             </div>
-            <div class="box none">
-                <div class="blur">
-                    <div class="head-box">
-                        <div class="icon">
-                            <img src="./assets/image/Arz/USD.png" alt="">
+            <div class="grid-item">
+                <div class="box none">
+                    <div class="blur">
+                        <div class="head-box">
+                            <div class="icon">
+                                <img src="./assets/image/Arz/USD.png" alt="">
+                            </div>
+                            <div class="moshakhasat-arz">
+                                <p class="name-arz">None</p>
+                                <p class="mokhtasar-arz">none</p>
+                            </div>
+                            <i class="fa-solid fa-caret-up up"></i>
                         </div>
-                        <div class="moshakhasat-arz">
-                            <p class="name-arz">None</p>
-                            <p class="mokhtasar-arz">none</p>
+                        <div class="price">
+                            <div class="gheymat">
+                                <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
+                                <p class="change-arz">+0.25%</p>
+                            </div>
+                            <img src="./assets/image/up.png" alt="UP" class="box-up">
                         </div>
-                        <i class="fa-solid fa-caret-up up"></i>
                     </div>
-                    <div class="price">
-                        <div class="gheymat">
-                            <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
-                            <p class="change-arz">+0.25%</p>
-                        </div>
-                        <img src="./assets/image/up.png" alt="UP" class="box-up">
+                    <div class="soon">
+                        <p>... بزودی</p>
                     </div>
-                </div>
-                <div class="soon">
-                    <p>... بزودی</p>
                 </div>
             </div>
-            <div class="box none">
-                <div class="blur">
-                    <div class="head-box">
-                        <div class="icon">
-                            <img src="./assets/image/Arz/USD.png" alt="">
+            <div class="grid-item">
+                <div class="box none">
+                    <div class="blur">
+                        <div class="head-box">
+                            <div class="icon">
+                                <img src="./assets/image/Arz/USD.png" alt="">
+                            </div>
+                            <div class="moshakhasat-arz">
+                                <p class="name-arz">None</p>
+                                <p class="mokhtasar-arz">none</p>
+                            </div>
+                            <i class="fa-solid fa-caret-up up"></i>
                         </div>
-                        <div class="moshakhasat-arz">
-                            <p class="name-arz">None</p>
-                            <p class="mokhtasar-arz">none</p>
+                        <div class="price">
+                            <div class="gheymat">
+                                <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
+                                <p class="change-arz">+0.25%</p>
+                            </div>
+                            <img src="./assets/image/up.png" alt="UP" class="box-up">
                         </div>
-                        <i class="fa-solid fa-caret-up up"></i>
                     </div>
-                    <div class="price">
-                        <div class="gheymat">
-                            <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
-                            <p class="change-arz">+0.25%</p>
-                        </div>
-                        <img src="./assets/image/up.png" alt="UP" class="box-up">
+                    <div class="soon">
+                        <p>... بزودی</p>
                     </div>
-                </div>
-                <div class="soon">
-                    <p>... بزودی</p>
                 </div>
             </div>
-        </div>
+            <div class="grid-item">
+                <div class="box none">
+                    <div class="blur">
+                        <div class="head-box">
+                            <div class="icon">
+                                <img src="./assets/image/Arz/USD.png" alt="">
+                            </div>
+                            <div class="moshakhasat-arz">
+                                <p class="name-arz">None</p>
+                                <p class="mokhtasar-arz">none</p>
+                            </div>
+                            <i class="fa-solid fa-caret-up up"></i>
+                        </div>
+                        <div class="price">
+                            <div class="gheymat">
+                                <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
+                                <p class="change-arz">+0.25%</p>
+                            </div>
+                            <img src="./assets/image/up.png" alt="UP" class="box-up">
+                        </div>
+                    </div>
+                    <div class="soon">
+                        <p>... بزودی</p>
+                    </div>
+                </div>
+            </div>
+          </div>
 
         <div class="show-more-less">
             <p class="show-more">نمایش بیشتر</p>
             <i class="fa-solid fa-chevron-down show-more-icon"></i>
-            <p class="update-show-more">... بزودی</p>
+            <p class="update-show-more">... درحال توسعه</p>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-    <div class="grid-container">
-        <div class="grid-item">
-            <div class="box" id="usd">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/USD.png" alt="USD">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">US Dollar</p>
-                        <p class="mokhtasar-arz">USD</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="usd-price">$60,000 <sup>تومان</sup></p>
-                        <p class="change-arz">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="box">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/euro.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Euro</p>
-                        <p class="mokhtasar-arz">eur</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="euro-price">$60,000 <sup>تومان</sup></p>
-                        <p class="change-arz">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="box">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/GBP.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Pound</p>
-                        <p class="mokhtasar-arz">GBP</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz">$60,000 <sup>تومان</sup></p>
-                        <p class="change-arz">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="box">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/KWD.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Dinar</p>
-                        <p class="mokhtasar-arz">KWD</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz">$60,000 <sup>تومان</sup></p>
-                        <p class="change-arz">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="box none">
-                <div class="blur">
-                    <div class="head-box">
-                        <div class="icon">
-                            <img src="./assets/image/Arz/USD.png" alt="">
-                        </div>
-                        <div class="moshakhasat-arz">
-                            <p class="name-arz">None</p>
-                            <p class="mokhtasar-arz">none</p>
-                        </div>
-                        <i class="fa-solid fa-caret-up up"></i>
-                    </div>
-                    <div class="price">
-                        <div class="gheymat">
-                            <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
-                            <p class="change-arz">+0.25%</p>
-                        </div>
-                        <img src="./assets/image/up.png" alt="UP" class="box-up">
-                    </div>
-                </div>
-                <div class="soon">
-                    <p>... بزودی</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="box none">
-                <div class="blur">
-                    <div class="head-box">
-                        <div class="icon">
-                            <img src="./assets/image/Arz/USD.png" alt="">
-                        </div>
-                        <div class="moshakhasat-arz">
-                            <p class="name-arz">None</p>
-                            <p class="mokhtasar-arz">none</p>
-                        </div>
-                        <i class="fa-solid fa-caret-up up"></i>
-                    </div>
-                    <div class="price">
-                        <div class="gheymat">
-                            <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
-                            <p class="change-arz">+0.25%</p>
-                        </div>
-                        <img src="./assets/image/up.png" alt="UP" class="box-up">
-                    </div>
-                </div>
-                <div class="soon">
-                    <p>... بزودی</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="box none">
-                <div class="blur">
-                    <div class="head-box">
-                        <div class="icon">
-                            <img src="./assets/image/Arz/USD.png" alt="">
-                        </div>
-                        <div class="moshakhasat-arz">
-                            <p class="name-arz">None</p>
-                            <p class="mokhtasar-arz">none</p>
-                        </div>
-                        <i class="fa-solid fa-caret-up up"></i>
-                    </div>
-                    <div class="price">
-                        <div class="gheymat">
-                            <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
-                            <p class="change-arz">+0.25%</p>
-                        </div>
-                        <img src="./assets/image/up.png" alt="UP" class="box-up">
-                    </div>
-                </div>
-                <div class="soon">
-                    <p>... بزودی</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="box none">
-                <div class="blur">
-                    <div class="head-box">
-                        <div class="icon">
-                            <img src="./assets/image/Arz/USD.png" alt="">
-                        </div>
-                        <div class="moshakhasat-arz">
-                            <p class="name-arz">None</p>
-                            <p class="mokhtasar-arz">none</p>
-                        </div>
-                        <i class="fa-solid fa-caret-up up"></i>
-                    </div>
-                    <div class="price">
-                        <div class="gheymat">
-                            <p class="price-arz" id="ton-price">$60,000 <sup>تومان</sup></p>
-                            <p class="change-arz">+0.25%</p>
-                        </div>
-                        <img src="./assets/image/up.png" alt="UP" class="box-up">
-                    </div>
-                </div>
-                <div class="soon">
-                    <p>... بزودی</p>
-                </div>
-            </div>
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <section class="crypto">
         <div class="header-section-arz">
             <div class="line line2"></div>
             <p class="title title2">کریپتوکارنسی</p>
-            <!-- <div class="under-title-crypto"></div> -->
-        </div>
-        <div class="boxs">
-            <div class="box btc">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/btc.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Bitcoin</p>
-                        <p class="mokhtasar-arz">btc</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="btc-price">$60,000 <sup>دلار</sup></p>
-                        <p class="change-arz" id="btc-today">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-            <div class="box eth">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/eth.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Ethereum</p>
-                        <p class="mokhtasar-arz">eth</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="eth-price">$60,000 <sup>دلار</sup></p>
-                        <p class="change-arz" id="eth-today">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-            <div class="box bnb">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/bnb.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">BNB</p>
-                        <p class="mokhtasar-arz">bnb</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="bnb-price">$60,000 <sup>دلار</sup></p>
-                        <p class="change-arz" id="bnb-today">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-            <div class="box usdt">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/usdt.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Tether</p>
-                        <p class="mokhtasar-arz">usdt</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="usdt-price">$60,000 <sup>تومان</sup></p>
-                        <p class="change-arz">+0.00%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
         </div>
 
-        <div class="boxs2">
-            <div class="box trx">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/trx.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Tron</p>
-                        <p class="mokhtasar-arz">trx</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="trx-price">$60,000 <sup>دلار</sup></p>
-                        <p class="change-arz" id="trx-today">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-            <div class="box doge">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/doge.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Dogecoin</p>
-                        <p class="mokhtasar-arz">doge</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="doge-price">$60,000 <sup>دلار</sup></p>
-                        <p class="change-arz" id="doge-today">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-            <div class="box sol">
-                <div class="head-box">
-                    <div class="icon">
-                        <img src="./assets/image/Arz/sol.png" alt="">
-                    </div>
-                    <div class="moshakhasat-arz">
-                        <p class="name-arz">Solana</p>
-                        <p class="mokhtasar-arz">sol</p>
-                    </div>
-                    <i class="fa-solid fa-caret-up up"></i>
-                </div>
-                <div class="price">
-                    <div class="gheymat">
-                        <p class="price-arz" id="sol-price">$60,000 <sup>دلار</sup></p>
-                        <p class="change-arz" id="sol-today">+0.25%</p>
-                    </div>
-                    <img src="./assets/image/up.png" alt="UP" class="box-up">
-                </div>
-            </div>
-            <div class="box ton">
-                <!-- <div class="error">
-                    <p>!! اختلال در سرور</p>
-                </div> -->
-                <div class="blur">
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="box btc">
                     <div class="head-box">
                         <div class="icon">
-                            <img src="./assets/image/Arz/ton.png" alt="">
+                            <img src="./assets/image/Arz/btc.png" alt="">
                         </div>
                         <div class="moshakhasat-arz">
-                            <p class="name-arz">Toncoin</p>
-                            <p class="mokhtasar-arz">ton</p>
+                            <p class="name-arz">Bitcoin</p>
+                            <p class="mokhtasar-arz">btc</p>
                         </div>
                         <i class="fa-solid fa-caret-up up"></i>
                     </div>
                     <div class="price">
                         <div class="gheymat">
-                            <p class="price-arz" id="ton-price">$60,000 <sup>دلار</sup></p>
-                            <p class="change-arz">+0.25%</p>
+                            <p class="price-arz" id="btc-price">$60,000 <sup>دلار</sup></p>
+                            <p class="change-arz" id="btc-today">+0.25%</p>
                         </div>
                         <img src="./assets/image/up.png" alt="UP" class="box-up">
                     </div>
                 </div>
-                <div class="popup">
-                    <p>!متاسفانه قادر به نمایش اطلاعات این ارز نیستیم</p>
+            </div>
+            <div class="grid-item">
+                <div class="box eth">
+                    <div class="head-box">
+                        <div class="icon">
+                            <img src="./assets/image/Arz/eth.png" alt="">
+                        </div>
+                        <div class="moshakhasat-arz">
+                            <p class="name-arz">Ethereum</p>
+                            <p class="mokhtasar-arz">eth</p>
+                        </div>
+                        <i class="fa-solid fa-caret-up up"></i>
+                    </div>
+                    <div class="price">
+                        <div class="gheymat">
+                            <p class="price-arz" id="eth-price">$60,000 <sup>دلار</sup></p>
+                            <p class="change-arz" id="eth-today">+0.25%</p>
+                        </div>
+                        <img src="./assets/image/up.png" alt="UP" class="box-up">
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="grid-item">
+                <div class="box bnb">
+                    <div class="head-box">
+                        <div class="icon">
+                            <img src="./assets/image/Arz/bnb.png" alt="">
+                        </div>
+                        <div class="moshakhasat-arz">
+                            <p class="name-arz">BNB</p>
+                            <p class="mokhtasar-arz">bnb</p>
+                        </div>
+                        <i class="fa-solid fa-caret-up up"></i>
+                    </div>
+                    <div class="price">
+                        <div class="gheymat">
+                            <p class="price-arz" id="bnb-price">$60,000 <sup>دلار</sup></p>
+                            <p class="change-arz" id="bnb-today">+0.25%</p>
+                        </div>
+                        <img src="./assets/image/up.png" alt="UP" class="box-up">
+                    </div>
+                </div>
+            </div>  
+            <div class="grid-item">
+                <div class="box usdt">
+                    <div class="head-box">
+                        <div class="icon">
+                            <img src="./assets/image/Arz/usdt.png" alt="">
+                        </div>
+                        <div class="moshakhasat-arz">
+                            <p class="name-arz">Tether</p>
+                            <p class="mokhtasar-arz">usdt</p>
+                        </div>
+                        <i class="fa-solid fa-caret-up up"></i>
+                    </div>
+                    <div class="price">
+                        <div class="gheymat">
+                            <p class="price-arz" id="usdt-price">$60,000 <sup>تومان</sup></p>
+                            <p class="change-arz">+0.00%</p>
+                        </div>
+                        <img src="./assets/image/up.png" alt="UP" class="box-up">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="box trx">
+                    <div class="head-box">
+                        <div class="icon">
+                            <img src="./assets/image/Arz/trx.png" alt="">
+                        </div>
+                        <div class="moshakhasat-arz">
+                            <p class="name-arz">Tron</p>
+                            <p class="mokhtasar-arz">trx</p>
+                        </div>
+                        <i class="fa-solid fa-caret-up up"></i>
+                    </div>
+                    <div class="price">
+                        <div class="gheymat">
+                            <p class="price-arz" id="trx-price">$60,000 <sup>دلار</sup></p>
+                            <p class="change-arz" id="trx-today">+0.25%</p>
+                        </div>
+                        <img src="./assets/image/up.png" alt="UP" class="box-up">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="box doge">
+                    <div class="head-box">
+                        <div class="icon">
+                            <img src="./assets/image/Arz/doge.png" alt="">
+                        </div>
+                        <div class="moshakhasat-arz">
+                            <p class="name-arz">Dogecoin</p>
+                            <p class="mokhtasar-arz">doge</p>
+                        </div>
+                        <i class="fa-solid fa-caret-up up"></i>
+                    </div>
+                    <div class="price">
+                        <div class="gheymat">
+                            <p class="price-arz" id="doge-price">$60,000 <sup>دلار</sup></p>
+                            <p class="change-arz" id="doge-today">+0.25%</p>
+                        </div>
+                        <img src="./assets/image/up.png" alt="UP" class="box-up">
+                    </div>
+                </div>
+            </div>  
+            <div class="grid-item">
+                <div class="box sol">
+                    <div class="head-box">
+                        <div class="icon">
+                            <img src="./assets/image/Arz/sol.png" alt="">
+                        </div>
+                        <div class="moshakhasat-arz">
+                            <p class="name-arz">Solana</p>
+                            <p class="mokhtasar-arz">sol</p>
+                        </div>
+                        <i class="fa-solid fa-caret-up up"></i>
+                    </div>
+                    <div class="price">
+                        <div class="gheymat">
+                            <p class="price-arz" id="sol-price">$60,000 <sup>دلار</sup></p>
+                            <p class="change-arz" id="sol-today">+0.25%</p>
+                        </div>
+                        <img src="./assets/image/up.png" alt="UP" class="box-up">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="box error">
+                    <div class="blur">
+                        <div class="head-box">
+                            <div class="icon">
+                                <img src="./assets/image/Arz/ton.png" alt="">
+                            </div>
+                            <div class="moshakhasat-arz">
+                                <p class="name-arz">Toncoin</p>
+                                <p class="mokhtasar-arz">ton</p>
+                            </div>
+                            <i class="fa-solid fa-caret-up up"></i>
+                        </div>
+                        <div class="price">
+                            <div class="gheymat">
+                                <p class="price-arz" id="ton-price">$60,000 <sup>دلار</sup></p>
+                                <p class="change-arz">+0.25%</p>
+                            </div>
+                            <img src="./assets/image/up.png" alt="UP" class="box-up">
+                        </div>
+                    </div>
+                    <div class="popup">
+                        <p>!متاسفانه قادر به نمایش اطلاعات این ارز نیستیم</p>
+                    </div>
+                </div>
+            </div>                
+          </div>
 
-        <div class="show-more-less">
+          <div class="show-more-less">
             <p class="show-more">نمایش بیشتر</p>
             <i class="fa-solid fa-chevron-down show-more-icon"></i>
-            <p class="update-show-more">... بزودی</p>
+            <p class="update-show-more">... درحال توسعه</p>
         </div>
     </section>
 
@@ -603,11 +449,10 @@
         <div class="header-section-arz">
             <div class="line line2"></div>
             <p class="title title2">اَرزچَندِ؟</p>
-            <!-- <div class="under-title-arz-chande"></div> -->
         </div>
         <div class="main-arz-chande">
             <div class="arz-chande-image">
-                <img src="./assets/image/ArzChande.gif" alt="Abour Us">
+                <a href="https://github.com/RealMamrez/Arz-Chand-Website" target="_blank"><img src="./assets/image/image1.png" alt="Abour Us"></a>
             </div>
             <p class="about-us">سلام 👋 چطورید؟! ماهم مثل شما سالها با هزار بدبختی و به نحو های مختلف قیمت دلار و ارز های مختلفو چک میکردیم. خودم که از تهِ تهِ چنل های تلگرام میرفتم قیمت دلارو میدیدم ماشالله ریال ما هم که روز به روز داره میره بالاتر و 
                 حسابی بازار هارو بهم میریزه <span class="auther">:دی</span>
@@ -618,10 +463,6 @@
                 <br>
                 <span class="auther">- محمد رزم پور</span></p>
         </div>
-
-        <!-- <div class="ads">
-            <img src="./assets/image/image2.png" alt="ADS">
-        </div> -->
 
         <div class="social">
             <div class="coffe" id="A">
@@ -637,7 +478,6 @@
     </section>
 
     <footer>
-        <!-- <img src="./assets/image/Footer.png" alt=""> -->
     </footer>
 
     <script src="./assets/js/script.js"></script>

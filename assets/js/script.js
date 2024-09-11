@@ -2,6 +2,7 @@ const A = document.querySelector('#A')
 const B = document.querySelector('#B')
 const C = document.querySelector('#C')
 const box = document.querySelector('.box')
+const item = document.querySelector('.grid-item')
 const upBox = document.querySelector('.box-up')
 const upIcon = document.querySelector('i')
 const usdPriceOutput = document.querySelector('#usd-price')
@@ -76,34 +77,6 @@ A.addEventListener("mouseover", event => {
   });
 
 
-// function start(){
-    // fetch(APIUrl)
-    //     .then(response => {
-    //         if (!response.ok) {
-    //             throw new Error('Network response was not ok');
-    //         }
-    //         return response.json();
-    //     })
-    //     .then(data => {
-    //         const priceUSD = data.usd_sell.value;
-    //         console.log(priceUSD);
-    //         usdPriceOutput.innerHTML = `\$${priceUSD} <sup>تومان</sup>`
-    //     })
-    //     .catch(error => {
-    //         console.error('Error:', error);
-    //     });
-
-
-    //USD
-
-    // fetch(``)
-    //     .then(response => {
-    //         return response.json();
-    //     })
-    //     .then(usd => {
-    //         console.log(usd.result.usdt-rls.latest);
-    //         usdPriceOutput.innerHTML = `\$${usd.usdt-rls.latest} <sup>تومان</sup>`
-    //     })
 
     //BTC
 
@@ -112,20 +85,9 @@ A.addEventListener("mouseover", event => {
             return response.json();
         })
         .then(btc => {
-            // const priceBTC = data.USD.value;
-            // console.log((btc.bpi.USD.code));
             btcPriceOutput.innerHTML = `\$${parseInt(btc.data.rates.USD)} <sup>دلار</sup>`
         })
 
-    // fetch(`https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
-    //     .then(response => {
-    //         return response.json();
-    //     })
-    //     .then(btcDay => {
-    //         // const priceBTC = data.USD.value;
-    //         console.log((btcDay.BTC.USD));
-    //         // btcPriceOutput.innerHTML = `\$${parseInt(btcDay.data.rates.USD)} <sup>دلار</sup>`
-    //     })
 
     fetch(`https://api.pro.coinbase.com/products/BTC-USD/stats`)
         .then(response => {
@@ -334,6 +296,13 @@ A.addEventListener("mouseover", event => {
         tonPriceOutput.innerHTML = `\$${(price.toFixed(2))} <sup>دلار</sup>`
     })
 
-// }
 
-// start()
+
+    fetch(`https://gw.arzdigital.com/muninn/v1/chart?id=20128&range=7d&_=1726005082372`)
+    .then(response => {
+        return response.json();
+    })
+    .then(usd => {
+        let e = usd.meta.high_usd
+        console.log(e)
+    })
