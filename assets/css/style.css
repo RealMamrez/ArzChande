@@ -135,7 +135,7 @@ p.date {
 }
 
 .grid-item .blur{
-  filter: blur(5px);
+  filter: blur(4px);
   transition: all .5s ease;
 }
 
@@ -175,15 +175,15 @@ p.date {
 
 .popup{
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 .popup p{
   font-family: vazir;
   font-weight: 1000;
   font-size: 12px;
-  text-align: center;
-  padding: 10px 0;
   width: 300px;
   color: #ffffff;
 }
