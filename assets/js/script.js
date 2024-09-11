@@ -1,6 +1,7 @@
 const A = document.querySelector('#A')
 const B = document.querySelector('#B')
 const C = document.querySelector('#C')
+const WidthText = document.querySelector('.date')
 const box = document.querySelector('.box')
 const item = document.querySelector('.grid-item')
 const upBox = document.querySelector('.box-up')
@@ -48,6 +49,10 @@ const APIUrl = `https://api.navasan.tech/latest/?api_key=${APIKey}&item=usd_sell
 
 let today = new Date().toLocaleDateString('fa-IR');
 console.log(today);
+window.addEventListener("resize", function () {
+    let Width = window.innerWidth;
+    WidthText.innerHTML = `${Width}`
+});
 
 
 C.addEventListener("mouseover", event => {
