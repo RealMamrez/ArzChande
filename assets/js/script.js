@@ -124,9 +124,13 @@ showMore2.addEventListener("mouseover", event => {
                 btcUpper.classList.add('fa-caret-down');
                 btcUpper.classList.add('down');
                 btcTodayOutput.classList.add('down');
-            }
 
-            btcTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+                btcTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+            }
+            else{
+                btcTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+            }
+            
         })
 
 
@@ -154,9 +158,12 @@ showMore2.addEventListener("mouseover", event => {
             ethUpper.classList.add('fa-caret-down');
             ethUpper.classList.add('down');
             ethTodayOutput.classList.add('down');
-        }
 
-        ethTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+            ethTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            ethTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
     })
 
     //BNB
