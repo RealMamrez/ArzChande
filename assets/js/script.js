@@ -5,7 +5,7 @@ const WidthText = document.querySelector('.date')
 const box = document.querySelector('.box')
 const item = document.querySelector('.grid-item')
 const upBox = document.querySelector('.box-up')
-const upIcon = document.querySelector('i')
+const upIcon = document.querySelector('.icon2')
 const usdPriceOutput = document.querySelector('#usd-price')
 const showMore1 = document.querySelector('#show-more1')
 const showMore2 = document.querySelector('#show-more2')
@@ -25,6 +25,15 @@ const dogePriceOutput = document.querySelector('#doge-price')
 const solPriceOutput = document.querySelector('#sol-price')
 const tonPriceOutput = document.querySelector('#ton-price')
 
+const xrpPriceOutput = document.querySelector('#xrp-price')
+const adaPriceOutput = document.querySelector('#ada-price')
+const avaxPriceOutput = document.querySelector('#avax-price')
+const shibPriceOutput = document.querySelector('#shib-price')
+const linkPriceOutput = document.querySelector('#link-price')
+const bchPriceOutput = document.querySelector('#bch-price')
+const ltcPriceOutput = document.querySelector('#ltc-price')
+const dotPriceOutput = document.querySelector('#dot-price')
+
 const btcTodayOutput = document.querySelector('#btc-today')
 const btcUpper = document.querySelector('.btc .up')
 
@@ -42,6 +51,31 @@ const dogeUpper = document.querySelector('.doge .up')
 
 const solTodayOutput = document.querySelector('#sol-today')
 const solUpper = document.querySelector('.sol .up')
+
+const xrpTodayOutput = document.querySelector('#xrp-today')
+const xrpUpper = document.querySelector('.xrp .up')
+
+const adaTodayOutput = document.querySelector('#ada-today')
+const adaUpper = document.querySelector('.ada .up')
+
+const avaxTodayOutput = document.querySelector('#avax-today')
+const avaxUpper = document.querySelector('.avax .up')
+
+const shibTodayOutput = document.querySelector('#shib-today')
+const shibUpper = document.querySelector('.shib .up')
+
+const linkTodayOutput = document.querySelector('#link-today')
+const linkUpper = document.querySelector('.link .up')
+
+const bchTodayOutput = document.querySelector('#bch-today')
+const bchUpper = document.querySelector('.bch .up')
+
+const ltcTodayOutput = document.querySelector('#ltc-today')
+const ltcUpper = document.querySelector('.ltc .up')
+
+const dotTodayOutput = document.querySelector('#dot-today')
+const dotUpper = document.querySelector('.dot .up')
+
 
 
 const APIKey = 'free5YHpxI6FFIO3FOBzEIcgpHlqXDEp';
@@ -83,20 +117,39 @@ A.addEventListener("mouseover", event => {
     B.classList.remove('hover')
   });
 
-showMore1.addEventListener("mouseover", event => {
-    showMore1.innerHTML = '... درحال توسعه'
-  });
+// showMore1.addEventListener("mouseover", event => {
+//     showMore1.innerHTML = '... درحال توسعه'
+//   });
   
-  showMore1.addEventListener("mouseout", event => {
-    showMore1.innerHTML = 'نمایش بیشتر'
-  });
-showMore2.addEventListener("mouseover", event => {
-    showMore2.innerHTML = '... درحال توسعه'
-  });
+//   showMore1.addEventListener("mouseout", event => {
+//     showMore1.innerHTML = 'نمایش بیشتر'
+//   });
+// showMore2.addEventListener("mouseover", event => {
+//     showMore2.innerHTML = '... درحال توسعه'
+//   });
   
-  showMore2.addEventListener("mouseout", event => {
-    showMore2.innerHTML = 'نمایش بیشتر'
-  });
+//   showMore2.addEventListener("mouseout", event => {
+//     showMore2.innerHTML = 'نمایش بیشتر'
+//   });
+
+let i = 0
+  function showMoreCrypto() {
+    const hidden = document.querySelector('.grid-container.hidden-i')
+    hidden.classList.toggle('active')
+    if (i % 2 == 0) {
+        showMore2.innerHTML = 'نمایش کمتر' 
+        upIcon.classList.remove('fa-chevron-down')
+        upIcon.classList.add('fa-chevron-up')
+    }
+    else{
+        showMore2.innerHTML = 'نمایش بیشتر'
+        upIcon.classList.add('fa-chevron-down')
+        upIcon.classList.remove('fa-chevron-up')
+    }
+
+    i++
+
+  }
 
 
 
@@ -130,7 +183,7 @@ showMore2.addEventListener("mouseover", event => {
             else{
                 btcTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
             }
-            
+
         })
 
 
@@ -323,4 +376,276 @@ showMore2.addEventListener("mouseover", event => {
         let price = ton.data.rates.USD
         price = Math.floor(price * 100) / 100;
         tonPriceOutput.innerHTML = `\$${(price.toFixed(2))} <sup>دلار</sup>`
+    })
+
+    //XRP
+
+    fetch(`https://api.coinbase.com/v2/exchange-rates?currency=sol`)
+    .then(response => {
+        return response.json();
+    })
+    .then(xrp => {
+        let price = xrp.data.rates.USD
+        price = Math.floor(price * 100) / 100;
+        xrpPriceOutput.innerHTML = `\$${(price.toFixed(2))} <sup>دلار</sup>`
+    })
+
+
+    fetch(`https://api.pro.coinbase.com/products/xrp-USD/stats`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let x = (data.last - data.open)/data.open*100
+        y = Math.floor(x * 100) / 100;
+
+        if( y < 0){ 
+            xrpUpper.classList.remove('fa-caret-up');
+            xrpUpper.classList.add('fa-caret-down');
+            xrpUpper.classList.add('down');
+            xrpTodayOutput.classList.add('down');
+
+            xrpTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            xrpTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
+    })
+
+    //ADA
+
+    fetch(`https://api.coinbase.com/v2/exchange-rates?currency=ada`)
+    .then(response => {
+        return response.json();
+    })
+    .then(ada => {
+        let price = ada.data.rates.USD
+        price = Math.floor(price * 100) / 100;
+        adaPriceOutput.innerHTML = `\$${(price.toFixed(2))} <sup>دلار</sup>`
+    })
+
+
+    fetch(`https://api.pro.coinbase.com/products/ada-USD/stats`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let x = (data.last - data.open)/data.open*100
+        y = Math.floor(x * 100) / 100;
+
+        if( y < 0){ 
+            adaUpper.classList.remove('fa-caret-up');
+            adaUpper.classList.add('fa-caret-down');
+            adaUpper.classList.add('down');
+            adaTodayOutput.classList.add('down');
+
+            adaTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            adaTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
+    })
+
+    //AVAX
+
+    fetch(`https://api.coinbase.com/v2/exchange-rates?currency=avax`)
+    .then(response => {
+        return response.json();
+    })
+    .then(avax => {
+        let price = avax.data.rates.USD
+        price = Math.floor(price * 100) / 100;
+        avaxPriceOutput.innerHTML = `\$${(price.toFixed(2))} <sup>دلار</sup>`
+    })
+
+
+    fetch(`https://api.pro.coinbase.com/products/avax-USD/stats`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let x = (data.last - data.open)/data.open*100
+        y = Math.floor(x * 100) / 100;
+
+        if( y < 0){ 
+            avaxUpper.classList.remove('fa-caret-up');
+            avaxUpper.classList.add('fa-caret-down');
+            avaxUpper.classList.add('down');
+            avaxTodayOutput.classList.add('down');
+
+            avaxTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            avaxTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
+    })
+
+    //SHIB
+
+    fetch(`https://api.coinbase.com/v2/exchange-rates?currency=shib`)
+    .then(response => {
+        return response.json();
+    })
+    .then(shib => {
+        let price = shib.data.rates.USD
+        // price = Math.floor(price * 100) / 100;
+        shibPriceOutput.innerHTML = `\$${price} <sup>دلار</sup>`
+    })
+
+
+    fetch(`https://api.pro.coinbase.com/products/shib-USD/stats`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let x = (data.last - data.open)/data.open*100
+        y = Math.floor(x * 100) / 100;
+
+        if( y < 0){ 
+            shibUpper.classList.remove('fa-caret-up');
+            shibUpper.classList.add('fa-caret-down');
+            shibUpper.classList.add('down');
+            shibTodayOutput.classList.add('down');
+
+            shibTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            shibTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
+    })
+
+    //LINK
+
+    fetch(`https://api.coinbase.com/v2/exchange-rates?currency=link`)
+    .then(response => {
+        return response.json();
+    })
+    .then(link => {
+        let price = link.data.rates.USD
+        price = Math.floor(price * 100) / 100;
+        linkPriceOutput.innerHTML = `\$${price} <sup>دلار</sup>`
+    })
+
+
+    fetch(`https://api.pro.coinbase.com/products/link-USD/stats`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let x = (data.last - data.open)/data.open*100
+        y = Math.floor(x * 100) / 100;
+
+        if( y < 0){ 
+            linkUpper.classList.remove('fa-caret-up');
+            linkUpper.classList.add('fa-caret-down');
+            linkUpper.classList.add('down');
+            linkTodayOutput.classList.add('down');
+
+            linkTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            linkTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
+    })
+
+    //BCH
+
+    fetch(`https://api.coinbase.com/v2/exchange-rates?currency=bch`)
+    .then(response => {
+        return response.json();
+    })
+    .then(bch => {
+        let price = bch.data.rates.USD
+        price = Math.floor(price * 100) / 100;
+        bchPriceOutput.innerHTML = `\$${price} <sup>دلار</sup>`
+    })
+
+
+    fetch(`https://api.pro.coinbase.com/products/bch-USD/stats`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let x = (data.last - data.open)/data.open*100
+        y = Math.floor(x * 100) / 100;
+
+        if( y < 0){ 
+            bchUpper.classList.remove('fa-caret-up');
+            bchUpper.classList.add('fa-caret-down');
+            bchUpper.classList.add('down');
+            bchTodayOutput.classList.add('down');
+
+            bchTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            bchTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
+    })
+
+    //LTC
+
+    fetch(`https://api.coinbase.com/v2/exchange-rates?currency=ltc`)
+    .then(response => {
+        return response.json();
+    })
+    .then(ltc => {
+        let price = ltc.data.rates.USD
+        price = Math.floor(price * 100) / 100;
+        ltcPriceOutput.innerHTML = `\$${price} <sup>دلار</sup>`
+    })
+
+
+    fetch(`https://api.pro.coinbase.com/products/ltc-USD/stats`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let x = (data.last - data.open)/data.open*100
+        y = Math.floor(x * 100) / 100;
+
+        if( y < 0){ 
+            ltcUpper.classList.remove('fa-caret-up');
+            ltcUpper.classList.add('fa-caret-down');
+            ltcUpper.classList.add('down');
+            ltcTodayOutput.classList.add('down');
+
+            ltcTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            ltcTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
+    })
+
+    //DOT
+
+    fetch(`https://api.coinbase.com/v2/exchange-rates?currency=dot`)
+    .then(response => {
+        return response.json();
+    })
+    .then(dot => {
+        let price = dot.data.rates.USD
+        price = Math.floor(price * 100) / 100;
+        dotPriceOutput.innerHTML = `\$${price} <sup>دلار</sup>`
+    })
+
+
+    fetch(`https://api.pro.coinbase.com/products/dot-USD/stats`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let x = (data.last - data.open)/data.open*100
+        y = Math.floor(x * 100) / 100;
+
+        if( y < 0){ 
+            dotUpper.classList.remove('fa-caret-up');
+            dotUpper.classList.add('fa-caret-down');
+            dotUpper.classList.add('down');
+            dotTodayOutput.classList.add('down');
+
+            dotTodayOutput.innerHTML = `${(y.toFixed(2))}%`
+        }
+        else{
+            dotTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
+        }
     })

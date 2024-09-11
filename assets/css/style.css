@@ -116,11 +116,28 @@ p.date {
   margin-bottom: 20px;
 }
 
+.widget-change, .widget-change-price{
+  color: #1ECB4F;
+}
+
+path {
+  fill: #1ECB4F;
+  stroke: #1ECB4F;
+}
+
 .grid-container{
   margin-top: 56px;
   display: grid;
   grid-template-columns: 22.8% 22.8% 22.8% 22.8%;
   gap: 42px;
+}
+
+.grid-container.hidden-i{
+  display: none;
+}
+
+.grid-container.hidden-i.active{
+  display: grid;
 }
 
 .grid-container.arz, .show-more-less.arz{
@@ -280,6 +297,10 @@ p.price-arz{
   font-family: vazir;
   font-weight: 600;
   color: #FFF;
+}
+
+.price-arz.shib{
+  font-size: 16px;
 }
 
 .change-arz{
