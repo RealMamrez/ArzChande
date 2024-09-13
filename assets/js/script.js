@@ -153,9 +153,10 @@ let i = 0
 
 
 
-    //BTC
+function start() {
+        //BTC
 
-    fetch(`https://api.coinbase.com/v2/exchange-rates?currency=BTC`)
+        fetch(`https://api.coinbase.com/v2/exchange-rates?currency=BTC`)
         .then(response => {
             return response.json();
         })
@@ -164,12 +165,12 @@ let i = 0
         })
 
 
-    fetch(`https://api.pro.coinbase.com/products/BTC-USD/stats`)
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            let x = (data.last - data.open)/data.open*100
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let x = data.RAW.BTC.USD.CHANGEPCTDAY
             y = Math.floor(x * 100) / 100;
 
             if( y < 0){ 
@@ -198,12 +199,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/ETH-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=eth&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = data.RAW.ETH.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -311,12 +312,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/doge-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=doge&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100;
+        let x = data.RAW.DOGE.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -345,12 +346,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/SOL-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=sol&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = data.RAW.SOL.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -391,12 +392,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/xrp-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=xrp&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = data.RAW.XRP.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -425,12 +426,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/ada-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ada&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = data.RAW.ADA.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -459,12 +460,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/avax-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=avax&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = data.RAW.AVAX.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -493,12 +494,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/shib-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=shib&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = data.RAW.SHIB.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -527,12 +528,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/link-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=link&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = data.RAW.LINK.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -561,12 +562,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/bch-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=bch&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = data.RAW.BCH.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -595,12 +596,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/ltc-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ltc&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = data.RAW.LTC.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -629,12 +630,12 @@ let i = 0
     })
 
 
-    fetch(`https://api.pro.coinbase.com/products/dot-USD/stats`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=dot&tsyms=USD&api_key=28f055579645454046123d6e1f8500164ea473af9b34ddd3bd89869598c43768`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        let x = (data.last - data.open)/data.open*100
+        let x = data.RAW.DOT.USD.CHANGEPCTDAY
         y = Math.floor(x * 100) / 100;
 
         if( y < 0){ 
@@ -649,3 +650,6 @@ let i = 0
             dotTodayOutput.innerHTML = `\+${(y.toFixed(2))}%`
         }
     })
+}
+
+setInterval(start, 12 * 60 * 60 * 1000); // 12 hours in milliseconds 

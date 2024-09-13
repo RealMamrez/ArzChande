@@ -44,10 +44,10 @@ body{
 }
 
 .hidden{
-  top: 233px;
+  top: 220px;
   position: absolute;
   width: 50px;
-  height: 30px;
+  height: 60px;
   background: #30353F;
   z-index: 10000;
 }
