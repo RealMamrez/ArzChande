@@ -81,13 +81,6 @@ const dotUpper = document.querySelector('.dot .up')
 const APIKey = 'free5YHpxI6FFIO3FOBzEIcgpHlqXDEp';
 const APIUrl = `https://api.navasan.tech/latest/?api_key=${APIKey}&item=usd_sell`;
 
-let today = new Date().toLocaleDateString('fa-IR');
-console.log(today);
-window.addEventListener("resize", function () {
-    let Width = window.innerWidth;
-    WidthText.innerHTML = `${Width}`
-});
-
 
 C.addEventListener("mouseover", event => {
     A.classList.add('hover')
@@ -154,6 +147,7 @@ let i = 0
 
 
 function start() {
+    console.log('Updated')
         //BTC
 
         fetch(`https://api.coinbase.com/v2/exchange-rates?currency=BTC`)
@@ -652,4 +646,13 @@ function start() {
     })
 }
 
-setInterval(start, 12 * 60 * 60 * 1000); // 12 hours in milliseconds 
+
+function startTime() {
+
+    start()
+    // let today = new Date().toLocaleDateString('fa-IR');
+    let s= new Date().toLocaleString();
+    console.log(`Last Update : ${s}`);
+}
+startTime()
+setInterval(startTime, 12 * 60 * 60 * 1000)
