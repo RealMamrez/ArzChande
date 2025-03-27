@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.48",
     "@headlessui/react": "^2.2.0",
     "framer-motion": "^12.6.2",
     "react": "^18.2.0",

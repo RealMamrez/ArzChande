@@ -1,39 +1,32 @@
-import CurrencyCard from './components/CurrencyCard'
-import AddCard from './components/AddCard'
+import { motion } from 'framer-motion';
+import ReactFullpage from '@fullpage/react-fullpage';
+import InfiniteScroll from './components/InfiniteScroll';
+
+// Import sections
+import HomeSection from './sections/HomeSection';
+import AboutSection from './sections/AboutSection';
+import SourceSection from './sections/SourceSection';
+import DonateSection from './sections/DonateSection';
 
 // Import flags
-import btcFlag from './assets/bitcoin.svg'
-import usdFlag from './assets/usd.svg'
+import btcFlag from './assets/bitcoin.svg';
+import usdFlag from './assets/usd.svg';
 
 function App() {
   const currencies = [
     {
-      currency: 'Bitcoin',
-      code: 'BTC',
-      value: 89203,
-      change: 0.25,
-      flag: btcFlag
-    },
-    {
       currency: 'Dollar',
       code: 'USD',
       value: 102308,
-      change: -0.01,
+      change: 2.02,
       flag: usdFlag
     },
     {
       currency: 'Bitcoin',
       code: 'BTC',
       value: 89203,
-      change: 0.25,
+      change: -5.25,
       flag: btcFlag
-    },
-    {
-      currency: 'Dollar',
-      code: 'USD',
-      value: 102308,
-      change: -0.01,
-      flag: usdFlag
     },
     {
       currency: 'Bitcoin',
@@ -49,57 +42,101 @@ function App() {
       change: -0.01,
       flag: usdFlag
     }
-  ]
+  ];
 
   return (
-    <div className="min-h-screen bg-[#121212] py-12 px-4 sm:px-6">
-      <div className="container mx-auto max-w-7xl">
-        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-8 sm:mb-12 text-center">ArzChande?</h1>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-16">
-          {currencies.slice(0, 5).map((currency, index) => (
-            <div key={index} className="w-full max-w-[500px] mx-auto">
-              <CurrencyCard {...currency} />
-            </div>
-          ))}
-          <div className="w-full max-w-[500px] mx-auto">
-            <AddCard />
-          </div>
+    <div className="bg-[#121212]">
+      {/* Bottom Navigation */}
+      <div className="fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)] sm:w-auto">
+        <div className="bg-[#1c1c1c]/90 backdrop-blur-lg rounded-2xl p-1.5 flex gap-1 sm:gap-2 justify-between sm:justify-start max-w-md mx-auto">
+          <button 
+            onClick={() => window.fullpage_api.moveTo(1)}
+            className="relative px-3 sm:px-6 py-2.5 rounded-xl text-gray-300 hover:text-white transition-colors group flex-1 sm:flex-initial text-center"
+          >
+            <span className="relative z-10 text-sm sm:text-base whitespace-nowrap">Home</span>
+            <motion.div
+              className="absolute inset-0 bg-white/10 rounded-xl"
+              initial={false}
+              animate={{
+                opacity: window.fullpage_api?.getActiveSection()?.index === 0 ? 1 : 0
+              }}
+              transition={{ duration: 0.2 }}
+            />
+          </button>
+          <button 
+            onClick={() => window.fullpage_api.moveTo(2)}
+            className="relative px-3 sm:px-6 py-2.5 rounded-xl text-gray-300 hover:text-white transition-colors group flex-1 sm:flex-initial text-center"
+          >
+            <span className="relative z-10 text-sm sm:text-base whitespace-nowrap">About</span>
+            <motion.div
+              className="absolute inset-0 bg-white/10 rounded-xl"
+              initial={false}
+              animate={{
+                opacity: window.fullpage_api?.getActiveSection()?.index === 1 ? 1 : 0
+              }}
+              transition={{ duration: 0.2 }}
+            />
+          </button>
+          <button 
+            onClick={() => window.fullpage_api.moveTo(3)}
+            className="relative px-3 sm:px-6 py-2.5 rounded-xl text-gray-300 hover:text-white transition-colors group flex-1 sm:flex-initial text-center"
+          >
+            <span className="relative z-10 text-sm sm:text-base whitespace-nowrap">Source</span>
+            <motion.div
+              className="absolute inset-0 bg-white/10 rounded-xl"
+              initial={false}
+              animate={{
+                opacity: window.fullpage_api?.getActiveSection()?.index === 2 ? 1 : 0
+              }}
+              transition={{ duration: 0.2 }}
+            />
+          </button>
+          <button 
+            onClick={() => window.fullpage_api.moveTo(4)}
+            className="relative px-3 sm:px-6 py-2.5 rounded-xl text-gray-300 hover:text-white transition-colors group flex-1 sm:flex-initial text-center"
+          >
+            <span className="relative z-10 text-sm sm:text-base whitespace-nowrap">Donate</span>
+            <motion.div
+              className="absolute inset-0 bg-white/10 rounded-xl"
+              initial={false}
+              animate={{
+                opacity: window.fullpage_api?.getActiveSection()?.index === 3 ? 1 : 0
+              }}
+              transition={{ duration: 0.2 }}
+            />
+          </button>
         </div>
-
-        <section className="mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">About ArzChande?</h2>
-          <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-            <span className="text-green-500">ArzChande</span> is your go-to platform for{' '}
-            <span className="text-blue-500">real-time</span> exchange rates of fiat currencies and cryptocurrencies. 
-            We provide <span className="text-blue-500">up-to-the-minute</span> price updates, market trends, and analytical insights 
-            to help you make informed financial decisions. Whether you're a trader, investor, or just curious about 
-            the value of digital assets, ArzChande ensures that you stay ahead of the market.
-          </p>
-        </section>
-
-        <section className="mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">Source Code</h2>
-          <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-            <span className="text-green-500">ArzChande</span> is an{' '}
-            <span className="text-blue-500">open-source</span> project, built with transparency and community collaboration in mind. 
-            You can explore, contribute, or even use the code for your own projects. The{' '}
-            <a href="#" className="text-blue-500 hover:underline">full source code is available</a> on GitHub—feel free to check it out 
-            and be part of the development!
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">Donate</h2>
-          <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-            We truly appreciate your support for <span className="text-green-500">ArzChande</span>! Your encouragement helps us continue 
-            providing real-time exchange rates, market insights, and valuable financial tools. If you find our platform useful, 
-            consider sharing it with others or supporting us in any way you can. Every bit of support helps us grow and improve! 🚀
-          </p>
-        </section>
       </div>
+
+      <ReactFullpage
+        scrollingSpeed={1000}
+        scrollHorizontally={true}
+        credits={false}
+        licenseKey={'gplv3-license'}
+        onLeave={(origin, destination, direction) => {
+          // این تابع بعد از هر اسکرول اجرا می‌شود و باعث به‌روزرسانی منو می‌شود
+          document.querySelectorAll('.nav-indicator').forEach((el, index) => {
+            if (index === destination.index) {
+              el.style.opacity = '1';
+            } else {
+              el.style.opacity = '0';
+            }
+          });
+        }}
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.Wrapper>
+              <HomeSection currencies={currencies} />
+              <AboutSection />
+              <SourceSection />
+              <DonateSection />
+            </ReactFullpage.Wrapper>
+          );
+        }}
+      />
+      <InfiniteScroll />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

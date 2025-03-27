@@ -20,7 +20,7 @@ const CurrencyCard = ({ currency, code, value, change, flag }) => {
       transition={{ duration: 0.3 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className={`bg-[#1c1c1c] p-6 rounded-xl w-full aspect-[1.65] hover:shadow-xl transition-all duration-300 hover:bg-[#242424] relative overflow-hidden group border-l-4 ${borderClass} ripple-bg cursor-pointer`}
+      className={`bg-[#1c1c1c] p-6 rounded-xl w-full aspect-[1.5] hover:shadow-xl transition-all duration-300 hover:bg-[#242424] relative overflow-hidden group border-l-4 ${borderClass} ripple-bg cursor-pointer`}
       data-ripple-color={rippleColor}
     >
       {/* Shine Effect */}
@@ -37,7 +37,7 @@ const CurrencyCard = ({ currency, code, value, change, flag }) => {
       <div className={`absolute inset-0 bg-gradient-to-r ${gradientClass} opacity-50`} />
       
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col">
+      <div className="relative z-10 h-full flex flex-col justify-center">
         <div className="flex items-center gap-3 mb-7">
           <motion.img 
             src={flag} 
@@ -51,9 +51,9 @@ const CurrencyCard = ({ currency, code, value, change, flag }) => {
             <div className="text-gray-400 text-sm">{code}</div>
           </div>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 flex flex-col justify-center">
           <motion.div 
-            className="text-2xl font-bold text-white mb-4 flex items-center gap-2"
+            className="text-2xl font-bold text-white mb-6 flex items-center gap-2"
             animate={{ scale: isHovered ? 1.05 : 1 }}
             transition={{ duration: 0.2 }}
           >
