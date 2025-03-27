@@ -114,7 +114,6 @@ function App() {
         credits={false}
         licenseKey={'gplv3-license'}
         onLeave={(origin, destination, direction) => {
-          // این تابع بعد از هر اسکرول اجرا می‌شود و باعث به‌روزرسانی منو می‌شود
           document.querySelectorAll('.nav-indicator').forEach((el, index) => {
             if (index === destination.index) {
               el.style.opacity = '1';

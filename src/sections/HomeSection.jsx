@@ -1,8 +1,22 @@
 import { motion } from 'framer-motion';
+import { useState, useMemo } from 'react';
 import CurrencyCard from '../components/CurrencyCard';
 import AddCard from '../components/AddCard';
+import SearchBar from '../components/SearchBar';
 
 const HomeSection = ({ currencies }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredCurrencies = useMemo(() => {
+    if (!searchTerm) return currencies;
+    
+    const term = searchTerm.toLowerCase();
+    return currencies.filter(currency => 
+      currency.currency.toLowerCase().includes(term) ||
+      currency.code.toLowerCase().includes(term)
+    );
+  }, [currencies, searchTerm]);
+
   return (
     <div className="section">
       <div className="container mx-auto max-w-7xl px-4">
@@ -14,6 +28,8 @@ const HomeSection = ({ currencies }) => {
         >
           ArzChande?
         </motion.h1>
+
+        <SearchBar onSearch={setSearchTerm} />
         
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
@@ -21,7 +37,7 @@ const HomeSection = ({ currencies }) => {
           transition={{ duration: 0.8 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-5"
         >
-          {currencies.map((currency, index) => (
+          {filteredCurrencies.map((currency, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, x: -50 }}
@@ -41,6 +57,17 @@ const HomeSection = ({ currencies }) => {
             <AddCard />
           </motion.div>
         </motion.div>
+
+        {/* No Results Message */}
+        {searchTerm && filteredCurrencies.length === 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center text-gray-400 mt-8"
+          >
+            No results found for "{searchTerm}"
+          </motion.div>
+        )}
       </div>
     </div>
   );
