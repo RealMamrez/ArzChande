@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import ReactFullpage from '@fullpage/react-fullpage';
 import InfiniteScroll from './components/InfiniteScroll';
 import { Toaster } from 'react-hot-toast';
+import { useState } from 'react';
 
 // Import sections
 import HomeSection from './sections/HomeSection';
@@ -23,25 +24,25 @@ function App() {
       flag: usdFlag
     },
     {
-      currency: 'Bitcoin',
-      code: 'BTC',
-      value: 89203,
-      change: -5.25,
-      flag: btcFlag
-    },
-    {
-      currency: 'Bitcoin',
-      code: 'BTC',
-      value: 89203,
-      change: 0.25,
-      flag: btcFlag
+      currency: 'Dollar',
+      code: 'USD',
+      value: 102308,
+      change: -12.02,
+      flag: usdFlag
     },
     {
       currency: 'Dollar',
       code: 'USD',
       value: 102308,
-      change: -0.01,
+      change: 0.02,
       flag: usdFlag
+    },
+    {
+      currency: 'Bitcoin',
+      code: 'BTC',
+      value: 89203,
+      change: -0.25,
+      flag: btcFlag
     }
   ];
 
@@ -136,7 +137,6 @@ function App() {
             );
           }}
         />
-        <InfiniteScroll />
       </div>
     </>
   );

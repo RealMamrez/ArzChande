@@ -1,21 +1,17 @@
 import { motion } from 'framer-motion';
-import { useState, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import CurrencyCard from '../components/CurrencyCard';
 import AddCard from '../components/AddCard';
 import SearchBar from '../components/SearchBar';
 
-const HomeSection = ({ currencies }) => {
+const HomeSection = ({ currencies: initialCurrencies }) => {
+  const [currencies, setCurrencies] = useState(initialCurrencies);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredCurrencies = useMemo(() => {
-    if (!searchTerm) return currencies;
-    
-    const term = searchTerm.toLowerCase();
-    return currencies.filter(currency => 
-      currency.currency.toLowerCase().includes(term) ||
-      currency.code.toLowerCase().includes(term)
-    );
-  }, [currencies, searchTerm]);
+  const filteredCurrencies = currencies.filter(currency => 
+    currency.currency.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    currency.code.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="section">
@@ -30,7 +26,7 @@ const HomeSection = ({ currencies }) => {
         </motion.h1>
 
         <SearchBar onSearch={setSearchTerm} />
-        
+
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -38,8 +34,8 @@ const HomeSection = ({ currencies }) => {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-5"
         >
           {filteredCurrencies.map((currency, index) => (
-            <motion.div 
-              key={index}
+            <motion.div
+              key={`${currency.currency}-${currency.code}-${index}`}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
@@ -51,7 +47,7 @@ const HomeSection = ({ currencies }) => {
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: filteredCurrencies.length * 0.1 }}
             className="w-full max-w-[500px] mx-auto"
           >
             <AddCard />
