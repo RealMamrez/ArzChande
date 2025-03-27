@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
+import PriceAlert from './PriceAlert';
 
 const CurrencyCard = ({ currency, code, value, change, flag }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -11,6 +13,43 @@ const CurrencyCard = ({ currency, code, value, change, flag }) => {
     ? 'border-l-green-500'
     : 'border-l-red-500';
   const rippleColor = isPositive ? 'green' : 'red';
+
+  // Check price alerts
+  useEffect(() => {
+    const checkAlerts = () => {
+      const alerts = JSON.parse(localStorage.getItem('priceAlerts') || '[]');
+      const currentPrice = value;
+
+      alerts.forEach((alert, index) => {
+        if (alert.currency === currency) {
+          const shouldTrigger = 
+            (alert.type === 'above' && currentPrice >= alert.targetPrice) ||
+            (alert.type === 'below' && currentPrice <= alert.targetPrice);
+
+          if (shouldTrigger) {
+            // Show alert notification
+            toast(
+              `${currency} price is now ${alert.type === 'above' ? 'above' : 'below'} ${alert.targetPrice.toLocaleString()} ${code}!`,
+              {
+                icon: '🚨',
+                style: {
+                  background: '#1c1c1c',
+                  color: '#fff',
+                  border: '1px solid #333'
+                }
+              }
+            );
+
+            // Remove triggered alert
+            alerts.splice(index, 1);
+            localStorage.setItem('priceAlerts', JSON.stringify(alerts));
+          }
+        }
+      });
+    };
+
+    checkAlerts();
+  }, [currency, code, value]);
 
   return (
     <motion.div
@@ -37,20 +76,24 @@ const CurrencyCard = ({ currency, code, value, change, flag }) => {
       <div className={`absolute inset-0 bg-gradient-to-r ${gradientClass} opacity-50`} />
       
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center">
-        <div className="flex items-center gap-3 mb-7">
-          <motion.img 
-            src={flag} 
-            alt={currency} 
-            className="w-10 h-10 rounded-full"
-            whileHover={{ rotate: 360 }}
-            transition={{ duration: 0.5 }}
-          />
-          <div>
-            <div className="text-white text-lg font-medium">{currency}</div>
-            <div className="text-gray-400 text-sm">{code}</div>
+      <div className="relative z-10 h-full flex flex-col">
+        <div className="flex items-center justify-between mb-7">
+          <div className="flex items-center gap-3">
+            <motion.img 
+              src={flag} 
+              alt={currency} 
+              className="w-10 h-10 rounded-full"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5 }}
+            />
+            <div>
+              <div className="text-white text-lg font-medium">{currency}</div>
+              <div className="text-gray-400 text-sm">{code}</div>
+            </div>
           </div>
+          <PriceAlert currency={{ currency, code, value }} />
         </div>
+
         <div className="flex-1 flex flex-col justify-center">
           <motion.div 
             className="text-2xl font-bold text-white mb-6 flex items-center gap-2"
