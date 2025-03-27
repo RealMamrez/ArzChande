@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "framer-motion": "^12.6.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss-ripple": "^0.7.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",

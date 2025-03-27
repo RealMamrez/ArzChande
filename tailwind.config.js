@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      ripple: theme => ({
+        colors: theme('colors')
+      }),
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-ripple')()
+  ],
 } 
