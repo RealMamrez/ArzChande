@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import PriceAlert from './PriceAlert';
 
-const CurrencyCard = ({ currency, code, value, change, flag }) => {
+const CurrencyCard = ({ currency, code, value, change, flag, type, onDelete }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [previousHighValue, setPreviousHighValue] = useState(value);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -172,10 +172,10 @@ const CurrencyCard = ({ currency, code, value, change, flag }) => {
                 transition={{ duration: 2 }}
                 style={{ mixBlendMode: 'overlay' }}
               />
-              ${value.toLocaleString()}
+              {value.toLocaleString()}
             </motion.span>
             <span className="text-sm text-gray-400">
-              {code === 'BTC' ? 'DOLLAR' : 'TOMAN'}
+              {type === 'crypto' ? 'DOLLAR' : 'TOMAN'}
             </span>
           </motion.div>
           <div className={`flex items-center gap-2 ${isPositive ? 'text-green-500' : 'text-red-500'}`}>
@@ -211,6 +211,21 @@ const CurrencyCard = ({ currency, code, value, change, flag }) => {
             </div>
           </div>
         </div>
+
+        {/* Delete Button */}
+        {isHovered && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={onDelete}
+            className="absolute bottom-1 right-1 p-2 rounded-full bg-red-500/10 hover:bg-red-500/20 text-red-500 transition-colors duration-200"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+            </svg>
+          </motion.button>
+        )}
       </div>
     </div>
   );

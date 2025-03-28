@@ -12,11 +12,13 @@
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.48",
     "@headlessui/react": "^2.2.0",
+    "firebase": "^11.5.0",
     "framer-motion": "^12.6.2",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.5.2",
+    "react-router-dom": "^7.4.0",
     "tailwindcss-ripple": "^0.7.1"
   },
   "devDependencies": {
