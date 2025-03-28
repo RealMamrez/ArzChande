@@ -67,7 +67,7 @@ const HomeSection = () => {
   const shouldShowAddCard = !searchTerm && selectedCurrencies.length < 8;
 
   return (
-    <div className="section">
+    <div className="h-full w-full flex items-center justify-center">
       <div className="container mx-auto max-w-7xl px-4">
         <motion.h1 
           initial={{ opacity: 0, y: -50 }}
@@ -94,7 +94,7 @@ const HomeSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
           {loading ? (
             <>
