@@ -16,7 +16,6 @@ const CurrencyCard = ({ currency, code, value, change, flag, type, onDelete }) =
     : 'border-l-red-500';
   const rippleColor = isPositive ? 'green' : 'red';
 
-  // Check price alerts
   useEffect(() => {
     const checkAlerts = () => {
       const alerts = JSON.parse(localStorage.getItem('priceAlerts') || '[]');
@@ -29,7 +28,6 @@ const CurrencyCard = ({ currency, code, value, change, flag, type, onDelete }) =
             (alert.type === 'below' && currentPrice <= alert.targetPrice);
 
           if (shouldTrigger) {
-            // Show alert notification
             toast(
               `${currency} price is now ${alert.type === 'above' ? 'above' : 'below'} ${alert.targetPrice.toLocaleString()} ${code}!`,
               {
@@ -42,7 +40,6 @@ const CurrencyCard = ({ currency, code, value, change, flag, type, onDelete }) =
               }
             );
 
-            // Remove triggered alert
             alerts.splice(index, 1);
             localStorage.setItem('priceAlerts', JSON.stringify(alerts));
           }
@@ -196,7 +193,7 @@ const CurrencyCard = ({ currency, code, value, change, flag, type, onDelete }) =
               <span className="font-bold">{Math.abs(change)}%</span>
               <span className="text-xs">24h</span>
             </div>
-            {/* Mini Chart with Animation */}
+
             <div className={`h-6 flex items-end gap-0.5 ${isPositive ? 'text-green-500' : 'text-red-500'}`}>
               {[20, 40, 60, 80, 100].map((height, index) => (
                 <div

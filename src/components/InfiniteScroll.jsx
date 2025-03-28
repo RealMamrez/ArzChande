@@ -31,7 +31,6 @@ const InfiniteScroll = () => {
     }
   ];
 
-  // دو برابر کردن آیتم‌ها برای ایجاد افکت اسکرول بی‌نهایت
   const duplicatedItems = [...items, ...items];
 
   return (

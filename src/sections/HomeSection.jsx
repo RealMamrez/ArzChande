@@ -53,16 +53,20 @@ const HomeSection = () => {
     return currencies.filter(currency => !selectedCurrencies.includes(currency.code));
   };
 
-  const filteredCurrencies = currencies.filter(currency => {
-    const matchesSearch = currency.currency.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      currency.code.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    if (searchTerm) {
-      return matchesSearch;
-    } else {
-      return matchesSearch && selectedCurrencies.includes(currency.code);
-    }
-  });
+  const filteredCurrencies = currencies
+    .filter(currency => {
+      if (currency.isHidden) return false;
+      
+      if (searchTerm) {
+        const searchLower = searchTerm.toLowerCase();
+        return (
+          currency.currency.toLowerCase().includes(searchLower) ||
+          currency.code.toLowerCase().includes(searchLower)
+        );
+      }
+      
+      return selectedCurrencies.includes(currency.code);
+    });
 
   const shouldShowAddCard = !searchTerm && selectedCurrencies.length < 8;
 

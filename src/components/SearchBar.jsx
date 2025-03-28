@@ -75,7 +75,7 @@ const SearchBar = ({ onSearch }) => {
         />
       </div>
 
-      {/* Search Pulse Effect */}
+      {/* Search Effect */}
       <motion.div
         initial={false}
         animate={{
